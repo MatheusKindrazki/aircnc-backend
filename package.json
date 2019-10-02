@@ -1,0 +1,19 @@
+{
+  "name": "aircnc-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:MatheusKindrazki/aircnc-backend.git",
+  "author": "Matheus Kindrazki <matheus@mentores.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "build": "sucrase ./src -d ./dist --transforms imports"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3",
+    "sucrase": "^3.10.1"
+  }
+}
