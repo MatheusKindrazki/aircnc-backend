@@ -1,9 +1,15 @@
 import { Router } from "express";
+import multer from "multer";
+import uploadConfig from "./config/upload";
+
+import SessionController from "./controllers/SessionController";
+import SpotController from "./controllers/SpotController";
 
 const routes = new Router();
+const upload = multer(uploadConfig);
 
-routes.get("/", (req, res) => {
-  return res.json({ ok: true });
-});
+routes.post("/sessions", SessionController.store);
+
+routes.post("/spots", upload.single("thumbnail"), SpotController.store);
 
 export default routes;
