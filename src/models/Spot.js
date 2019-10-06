@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const SpotSchema = new mongoose.Schema({
+const SpotSchema = new Schema({
   thumbnail: String,
   company: String,
   price: Number,
   techs: [String],
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User"
   }
 });
 
-export default mongoose.model("Spot", SpotSchema);
+export default model("Spot", SpotSchema);
